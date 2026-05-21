@@ -1,10 +1,11 @@
 - hosts: all
-  remote_user: ec2-user
+  remote_user: root
   become: yes
+  become_method: sudo
   tasks:
     - name: "Install, start and enable httpd"
       shell:
         cmd: |
-          yum install httpd
-          systemctl start httpd
-          systemctl enable httpd
+          yum install httpd;
+          systemctl start httpd;
+          systemctl enable httpd;
