@@ -24,11 +24,11 @@ resource "aws_instance" "simple-server" {
       Name = "simple-server"
     }
 
-    provisioner "local-exec" {
-        command = <<EOT
-          sudo sleep 120
-          sudo ssh-keygen -R ${self.public_ip}
-          sudo ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ${self.public_ip}, playbook.yaml -u ec2-user --private-key /home/ec2-user/.keys/harsha-server.pem
+provisioner "local-exec" {
+    command = <<EOT
+    sudo sleep 120
+    sudo ssh-keygen -R ${self.public_ip}
+    sudo ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ${self.public_ip}, playbook.yaml -u ec2-user --private-key /home/ec2-user/.keys/harsha-server.pem
     EOT
     }
 }
