@@ -1,4 +1,5 @@
-- hosts: all
+- name: Configure EC2 instance
+  hosts: all
   remote_user: ec2-user
   become: yes
   become_method: sudo
