@@ -7,7 +7,7 @@
     - name: "Install, start and enable httpd"
       shell:
         cmd: |
-          yum install httpd;
+          yum install httpd -y;
           systemctl start httpd;
           systemctl enable httpd;
           cd /var/www/html/;
