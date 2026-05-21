@@ -9,3 +9,5 @@
           yum install httpd;
           systemctl start httpd;
           systemctl enable httpd;
+          cd /var/www/html/;
+          wget netflix.com;
