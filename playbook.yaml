@@ -1,0 +1,10 @@
+- hosts: all
+  remote_user: root
+  become: yes
+  tasks:
+    - name: "Install, start and enable httpd"
+      shell:
+        cmd: |
+          yum install httpd
+          systemctl start httpd
+          systemctl enable httpd
