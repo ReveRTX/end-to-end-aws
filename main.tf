@@ -20,6 +20,10 @@ resource "aws_instance" "simple-server" {
     key_name = "harsha-server"
     vpc_security_group_ids = [ aws_security_group.ss-sec-grp.id ]
 
+    tags = {
+      "value" = "simple-server"
+    }
+
     provisioner "local-exec" {
         command = <<EOT
         sudo sleep 120
