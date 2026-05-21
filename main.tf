@@ -21,7 +21,7 @@ resource "aws_instance" "simple-server" {
     vpc_security_group_ids = [ aws_security_group.ss-sec-grp.id ]
 
     tags = {
-      "value" = "simple-server"
+      Name = "simple-server"
     }
 
     provisioner "local-exec" {
